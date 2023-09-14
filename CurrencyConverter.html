@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Currency Converter</title>
+</head>
+<body style="background-color: rgb(70, 58, 58);">
+    <br>
+    <br> <br> <br>
+    <div style="background-color:rgb(236, 181, 52);   border:10px solid gray;margin-left:auto;margin-right:auto; display:block; width:fit-content; padding-left:7em; padding-right:7em; ">
+        <h1>Currency Converter</h1>
+        <input type="number"  class=" boxborder boxshadow" id="amount" placeholder="Enter USD amount">
+        <button id="convert" onclick="convertCurrency()">Convert</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function convertCurrency() {
+            const usdAmount = parseFloat(document.getElementById('amount').value);
+            const conversionRate = 82.96; 
+
+            if (!isNaN(usdAmount)) {
+                const inrAmount = usdAmount * conversionRate;
+                document.getElementById('result').textContent = `${usdAmount} US Doller is ${inrAmount.toFixed(2)} Indian R`;
+            } else {
+                document.getElementById('result').textContent = 'Please enter a valid amount.';
+            }
+        }
+    </script>
+</body>
+</html>
